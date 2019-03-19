@@ -11,8 +11,10 @@
 '''
 #######################
 
+import time
+
 # lambda case
-aaa = lambda x: x * 10
+# aaa = lambda x: x * 10
 # print(aaa(10))
 
 # map case
@@ -27,7 +29,7 @@ l2 = map(mult, l1)
 # print(list(l2))
 
 # reduce case remember that reduce(func,sequence) ,func needs 2 arrguments
-from functools import reduce
+# from functools import reduce
 l3 = [1, 2, 3, 4, 5]
 
 
@@ -35,7 +37,7 @@ def mult1(x, y):
     return x * y
 
 
-l4 = reduce(mult1, l3)
+# l4 = reduce(mult1, l3)
 # print(l4)
 
 # filter case as map
@@ -120,7 +122,6 @@ def count2():
 # print(f3())
 
 # Decrator case
-import time
 
 
 def PrintTime(f):
@@ -140,6 +141,6 @@ def hello():
 
 # Partial function case
 
-from functools import partial
+# from functools import partial
 # j = int('i', base=2)
 print(int('12345', base=8))
