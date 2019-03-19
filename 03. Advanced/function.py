@@ -10,6 +10,10 @@
 @Desc    :   None
 '''
 #######################
+import collections
+from collections import deque
+# from collections import defaultdict
+from collections import Counter
 
 # zip; enumerate; collections(dequeue; defaultdict; Counter )
 
@@ -33,13 +37,11 @@ l1 = enumerate(i)
 
 # collections case
 
-import collections
 Point = collections.namedtuple("Point", ['x', 'y', 'z'])
 p = Point(11, 22, 33)
 # print(p[2])
 
 # deque case
-from collections import deque
 q = deque(['a', 'b', 'c'])
 # print(q)
 
@@ -50,14 +52,12 @@ q = deque(['a', 'b', 'c'])
 # print(q)
 
 # defaultdict case
-from collections import defaultdict
 
 dic1 = {'one': 1, 'two': 2, 'three': 3}
-func = lambda: '返回字典默认字符'
-dic1 = defaultdict(func)
-print(dic1['one'])
+# func = lambda: '返回字典默认字符'
+# dic1 = defaultdict(func)
+# print(dic1['one'])
 
 # counter case
-from collections import Counter
 c = Counter('asfoijsgisamviosdmioehwgnweiohgkwlengornher')
 print(c)
