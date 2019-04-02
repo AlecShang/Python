@@ -5,14 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File (Integrated Terminal)",
+            "name": "Terminal (integrated)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${workspaceFolder}/.",
+            "env": {},
+            "envFile": "${workspaceFolder}/.env",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Console",
             "type": "python",
             "request": "launch",
             "program": "${file}",
             //"program": "${workspaceRoot}/.",
             "cwd": "${workspaceFolder}/.",
-            "env":{},
-            "envFile":"${workspaceFolder}/.env",
+            "env": {},
+            "envFile": "${workspaceFolder}/.env",
             //"console": "integratedTerminal"
             "console": "none"
         },
