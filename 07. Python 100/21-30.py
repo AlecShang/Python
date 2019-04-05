@@ -57,23 +57,81 @@
 # 25. 求1+2!+3!+...+20!的和。
 # 分析: 1+1*2+1*2*3+1*2*3*4
 
+# def plus(x):
+#     y = 1
+#     for i in range(1, x + 1):
+#         y = y * i
+#     return y
 
-def plus(x):
-    y = 1
-    for i in range(1, x + 1):
-        y = y * i
-    return y
+# y = sum(map(plus, range(1, 21)))
 
-
-y = sum(map(plus, range(1, 21)))
-
-# s = sum(map(op, l))
-# print(s)
-print(y)
+# # s = sum(map(op, l))
+# # print(s)
+# print(y)
 
 # 26. 利用递归方法求5!
 # 分析:
 
+# def iter(n):
+#     if n == 1:
+#         return n
+#     return iter(n - 1) * n
 
-def iter(i):
-    return y
+# x = iter(5)
+# print(x)
+
+# # 27. 用递归函数调用方式，将所输入的5个字符，以相反顺序打印出来。
+# # 解析:
+
+# def iter(n, i):
+#     if n == '':
+#         return
+#     print(n[i - 1])
+#     return iter(n[:-1], i - 1)
+
+# l1 = 'abcde'
+# iter(l1, len(l1))
+
+# # 28. 有5个人坐在一起，问第五个人多少岁？他说比第4个人大2岁。
+# # 问第4个人岁数，他说比第3个人大2岁。问第三个人，又说比第2人大两岁。
+# # 问第2个人，说比第一个人大两岁。最后问第一个人，他说是10岁。请问第五个人多大？
+# # 分析:递归问题,f1=10,f2=f1+2 f3=f2+2
+
+# def iter(n, p):
+#     if p > 5:
+#         return (n - 2)
+#     return iter(n + 2, p + 1)
+
+# y = iter(10, 1)
+# print(y)
+
+# # 29. 给一个不多于5位的正整数，要求：一、求它是几位数，二、逆序打印出各位数字。
+# # 分析:和27类似.
+
+# def iter(n, i):
+#     if n == '':
+#         return
+#     print(n[i - 1])
+#     return iter(n[:-1], i - 1)
+
+# l1 = '12345'
+# print(len(l1))
+# iter(l1, len(l1))
+
+# # 30. 一个5位数，判断它是不是回文数。
+# # 即12321是回文数，个位与万位相同，十位与千位相同。
+# # 分析: 类似29
+
+# def iter(n, i, l2):
+#     if n == '':
+#         return
+#     l2.append(n[i - 1])
+#     return iter(n[:-1], i - 1, l2)
+
+# l1, l2 = '12321', []
+# print(len(l1))
+# iter(l1, len(l1), l2)
+# if l2[0] == l2[4] and l2[1] == l2[3]:
+#     print('回文数')
+# else:
+#     print('No')
