@@ -55,7 +55,6 @@ import sys
 #     pickle.dump(p,f)
 # print('Done.....')
 
-
 # 反序列化,一般是将序列化的文件进行一个解码操作
 # import pickle
 
@@ -74,5 +73,3 @@ import sys
 #     print(d['two'])
 
 # print('Done......')
-
-
