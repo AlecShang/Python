@@ -12,6 +12,7 @@
             "cwd": "${workspaceFolder}/.",
             "env": {},
             "envFile": "${workspaceFolder}/.env",
+            "pythonPath": "${config:python.pythonPath}",
             "console": "integratedTerminal"
         },
         {
@@ -19,7 +20,7 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            //"program": "${workspaceRoot}/.",
+            // "program": "${workspaceRoot}/.",
             "cwd": "${workspaceFolder}/.",
             "env": {},
             "envFile": "${workspaceFolder}/.env",
