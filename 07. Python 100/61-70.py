@@ -67,9 +67,33 @@
 # a = b + c
 # print(a)
 
-# 69. 有n个人围成一圈，顺序排号。从第一个人开始报数（从1到3报数），
+# ***69. 有n个人围成一圈，顺序排号。从第一个人开始报数（从1到3报数），
 # 凡报到3的人退出圈子，问最后留下的是原来第几号的那位。
-x = 23
-for i in range(1, x + 1):
-    if i % 3 == 0:
-        pass
+# x = 23
+# l1 = []
+# y = 1
+# for i in range(1, x + 1):
+#     if i % 3 == 0:
+#         l1.append(3)
+#     elif i % 3 == 1:
+#         l1.append(1)
+#     elif i % 3 == 2:
+#         l1.append(2)
+# print(l1)
+# for j in l1:
+#     if j == 3:
+#         l1[l1.index(j)] = 0
+#         while l1[l1.index(j)+y] == 0:
+#             y += 1
+#         l1[l1.index(j)+y] = 3
+#         print(l1, end='')
+
+
+# # 70. 写一个函数，求一个字符串的长度，在main函数中输入字符串，并输出其长度。
+# def cal_str(x):
+#     return len(x)
+
+
+# if __name__ == "__main__":
+#     str = input('please input string:')
+#     print(cal_str(str))

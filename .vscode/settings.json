@@ -1,7 +1,16 @@
 {
     "python.pythonPath": "/anaconda3/envs/Python371/bin/python",
-    "python.linting.flake8Enabled": true,
-    "python.formatting.provider": "yapf",
-    "python.linting.pylintEnabled": false,
-    "python.linting.enabled": true
+    "python.linting.flake8Enabled": false,
+    "python.formatting.provider": "autopep8",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pep8Enabled": false,
+    // "terminal.integrated.shellArgs.windows": [
+    //     "-NoExit",
+    //     "/c",
+    //     "chcp 65001"
+    // ],
+    // "terminal.integrated.shellArgs.windows": [
+    //     "/K chcp 65001 >nul"
+    // ]
 }

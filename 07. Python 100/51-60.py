@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- encoding: utf-8 -*-
+# -*- encoding: UTF-8 -*-
 '''
 @File    :   51-60.py
 @Time    :   2019/04/04 14:29:52
@@ -70,17 +70,13 @@
 
 # 59. 画图，综合例子。 (略过)
 
-
 # 60. 计算字符串长度。
-def aaa():
-    a = 'asdasfasgga'
-    return len(a)
+# def aaa():
+#     a = 'asdasfasgga'
+#     return len(a)
 
+# def bbb():
+#     return 'bbb'
 
-def bbb():
-    return 'bbb'
-
-
-if __name__ == "__main__":
-    print('aaa')
-    print('bbb')
+print('aaa', end='')
+print('bbb')
