@@ -1,10 +1,14 @@
 {
+    // "python.pythonPath": "/anaconda3/envs/Python371/bin/python",
     "python.pythonPath": "/anaconda3/envs/Python371/bin/python",
-    "python.linting.flake8Enabled": false,
+    // "python.linting.flake8Enabled": true,
+    // "python.formatting.provider": "yapf",
+    // "python.linting.enabled": false,
     "python.formatting.provider": "autopep8",
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
+    // "python.linting.pylintEnabled": true,
+    // "python.linting.enabled": true,
     "python.linting.pep8Enabled": false,
+    "python.linting.pylintEnabled": true,
     // "terminal.integrated.shellArgs.windows": [
     //     "-NoExit",
     //     "/c",

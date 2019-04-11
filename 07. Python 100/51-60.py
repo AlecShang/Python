@@ -1,14 +1,4 @@
-#!/usr/bin/env python
 # -*- encoding: UTF-8 -*-
-'''
-@File    :   51-60.py
-@Time    :   2019/04/04 14:29:52
-@Author  :   Alec Shang
-@Version :   1.0
-@Contact :   shangjingweiwork@163.com
-@License :   (C)Copyright 2019-2020
-@Desc    :   None
-'''
 
 #######################
 # # 51. 学习使用按位与 & 。
@@ -78,5 +68,5 @@
 # def bbb():
 #     return 'bbb'
 
-print('aaa', end='')
+print('aaa')
 print('bbb')
