@@ -1,7 +1,10 @@
 {
-    "python.pythonPath": "/anaconda3/envs/Python371/bin/python",
+    "python.pythonPath": "E:\\Anaconda3\\envs\\python37\\python.exe",
     "python.linting.flake8Enabled": true,
     "python.formatting.provider": "yapf",
     "python.linting.pylintEnabled": false,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    // "debug.node.autoAttach": "on"
+    "terminal.integrated.cursorBlinking": true,
+    "editor.trimAutoWhitespace": true
 }
