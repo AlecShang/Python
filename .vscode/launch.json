@@ -24,6 +24,7 @@
             "cwd": "${workspaceFolder}/.",
             "env": {},
             "envFile": "${workspaceFolder}/.env",
+            // "pythonPath": "/usr/local/bin/python",
             //"console": "integratedTerminal"
             "console": "none"
         },

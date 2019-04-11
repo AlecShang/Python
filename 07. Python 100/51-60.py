@@ -1,14 +1,4 @@
-#!/usr/bin/env python
-# -*- encoding: utf-8 -*-
-'''
-@File    :   51-60.py
-@Time    :   2019/04/04 14:29:52
-@Author  :   Alec Shang
-@Version :   1.0
-@Contact :   shangjingweiwork@163.com
-@License :   (C)Copyright 2019-2020
-@Desc    :   None
-'''
+# -*- encoding: UTF-8 -*-
 
 #######################
 # # 51. 学习使用按位与 & 。
@@ -70,17 +60,13 @@
 
 # 59. 画图，综合例子。 (略过)
 
-
 # 60. 计算字符串长度。
-def aaa():
-    a = 'asdasfasgga'
-    return len(a)
+# def aaa():
+#     a = 'asdasfasgga'
+#     return len(a)
 
+# def bbb():
+#     return 'bbb'
 
-def bbb():
-    return 'bbb'
-
-
-if __name__ == "__main__":
-    print('aaa')
-    print('bbb')
+print('aaa')
+print('bbb')
