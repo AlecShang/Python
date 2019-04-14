@@ -51,66 +51,34 @@
 #     # tensorboard 画图
 
 
-# 神经网络的例子.
+# 官方的新手入门
 import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
-# one_hot=True表示对label进行one-hot编码，
-# 比如标签4可以表示为[0, 0, 0, 0, 1, 0, 0, 0, 0, 0]。
-# 这是神经网络输出层要求的格式。
-mnist = input_data.read_data_sets('MNIST_data/', one_hot=True)
+import numpy as np
 
-# 超参数
-learning_rate = 0.5
-epochs = 10
-batch_size = 100
+# 使用 NumPy 生成假数据(phony data), 总共 100 个点.
+x_data = np.float32(np.random.rand(2, 100))  # 随机输入
+y_data = np.dot([0.100, 0.200], x_data) + 0.300
 
-# 输入图片为28 x 28 像素 = 784
-x = tf.placeholder(tf.float32, [None, 784], name='x')
-# 输出为0-9的one-hot编码
-y = tf.placeholder(tf.float32, [None, 10], name='y')
+# 构造一个线性模型
+#
+b = tf.Variable(tf.zeros([1]))
+W = tf.Variable(tf.random_uniform([1, 2], -1.0, 1.0))
+y = tf.matmul(W, x_data) + b
 
-# hidden layer => w, b
-W1 = tf.Variable(tf.random_normal([784, 300], stddev=0.03), name='W1')
-b1 = tf.Variable(tf.random_normal([300]), name='b1')
-# output layer => w, b
-W2 = tf.Variable(tf.random_normal([300, 10], stddev=0.03), name='W2')
-b2 = tf.Variable(tf.random_normal([10]), name='b2')
+# 最小化方差
+loss = tf.reduce_mean(tf.square(y - y_data))
+optimizer = tf.train.GradientDescentOptimizer(0.5)
+train = optimizer.minimize(loss)
 
+# 初始化变量
+init = tf.initialize_all_variables()
 
-# hidden layer
-hidden_out = tf.add(tf.matmul(x, W1), b1)
-hidden_out = tf.nn.relu(hidden_out)
+# 启动图 (graph)
+sess = tf.Session()
+sess.run(init)
 
-# 计算输出
-y_ = tf.nn.softmax(tf.add(tf.matmul(hidden_out, W2), b2))
-
-y_clipped = tf.clip_by_value(y_, 1e-10, 0.9999999)
-cross_entropy = -tf.reduce_mean(tf.reduce_sum(y *
-                                              tf.log(y_clipped) + (1 - y) * tf.log(1 - y_clipped), axis=1))
-
-# 创建优化器，确定优化目标
-optimizer = tf.train.GradientDescentOptimizer(
-    learning_rate=learning_rate).minimizer(cross_entropy)
-
-# init operator
-init_op = tf.global_variables_initializer()
-
-# 创建准确率节点
-correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
-accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-
-# 创建session
-with tf.Session() as sess:
-    # 变量初始化
-    sess.run(init_op)
-    total_batch = int(len(mnist.train.labels) / batch_size)
-    for epoch in range(epochs):
-        avg_cost = 0
-        for i in range(total_batch):
-            batch_x, batch_y = mnist.train.next_batch(batch_size=batch_size)
-            _, c = sess.run([optimizer, cross_entropy],
-                            feed_dict={x: batch_x, y: batch_y})
-            avg_cost += c / total_batch
-        print("Epoch:", (epoch + 1), "cost = ", "{:.3f}".format(avg_cost))
-    print(sess.run(accuracy, feed_dict={
-          x: mnist.test.images, y: mnist.test.labels}))
+# 拟合平面
+for step in range(0, 201):
+    sess.run(train)
+    if step % 20 == 0:
+        print(step, sess.run(W), sess.run(b))

@@ -10,12 +10,19 @@
 @Desc    :   None
 '''
 #######################
-import tensorflow as tf
+# import tensorflow as tf
 
-y_hat = tf.constant(36)
-y = tf.constant(39)
-loss = tf.Variable((y-y_hat)**2)
-init = tf.global_variables_initializer()
-with tf.Session() as session:
-    session.run(init)
-    print(session.run(loss))
+# y_hat = tf.constant(36)
+# y = tf.constant(39)
+# loss = tf.Variable((y-y_hat)**2)
+# init = tf.global_variables_initializer()
+# with tf.Session() as session:
+#     session.run(init)
+#     print(session.run(loss))
+
+# import tensorflow as tf
+# y = tf.constant(9)
+# x = tf.constant(2)
+# init = tf.global_variables_initializer()
+# sess = tf.Session()
+# print(sess.run(x+y))
