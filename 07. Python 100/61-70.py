@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
 @File    :   61-70.py
@@ -11,19 +10,19 @@
 '''
 #######################
 # # 61. 打印出杨辉三角形（要求打印出10行)
-# l1 = [[0 for i in range(10)] for i in range(10)]
-# for i in range(1, 11):
-#     for j in range(1, i + 1):
-#         if j == i or j == 1:
-#             print(1, end=' ')
-#             l1[i - 1][j - 1] = 1
-#             l1[i - 1][i - 1] = 1
-#             continue
-#         else:
-#             x = l1[i - 2][j - 2] + l1[i - 2][j - 1]
-#             print(x, end=' ')
-#             l1[i - 1][j - 1] = x
-#     print('')
+l1 = [[0 for i in range(10)] for i in range(10)]
+for i in range(1, 11):
+    for j in range(1, i + 1):
+        if j == i or j == 1:
+            print(1, end=' ')
+            l1[i - 1][j - 1] = 1
+            l1[i - 1][i - 1] = 1
+            continue
+        else:
+            x = l1[i - 2][j - 2] + l1[i - 2][j - 1]
+            print(x, end=' ')
+            l1[i - 1][j - 1] = x
+    print('')
 
 # # 62. 查找字符串。
 # a = 'abcdafasfawfawf'
@@ -70,6 +69,11 @@
 # ***69. 有n个人围成一圈，顺序排号。从第一个人开始报数（从1到3报数），
 # 凡报到3的人退出圈子，问最后留下的是原来第几号的那位。
 # x = 23
+<<<<<<< HEAD
+# for i in range(1, x + 1):
+#     if i % 3 == 0:
+#         pass
+=======
 # l1 = []
 # y = 1
 # for i in range(1, x + 1):
@@ -97,3 +101,4 @@
 # if __name__ == "__main__":
 #     str = input('please input string:')
 #     print(cal_str(str))
+>>>>>>> 2485d944e1df74a21e5d5d0929c250ea7b5b7c49
