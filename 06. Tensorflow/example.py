@@ -54,31 +54,58 @@
 # 官方的新手入门
 import tensorflow as tf
 import numpy as np
+from matplotlib import pyplot as plt
 
 # 使用 NumPy 生成假数据(phony data), 总共 100 个点.
-x_data = np.float32(np.random.rand(2, 100))  # 随机输入
-y_data = np.dot([0.100, 0.200], x_data) + 0.300
+with tf.name_scope('input'):
+    x_data = np.float32(np.random.rand(2, 100))  # 随机输入
+    y_data = np.dot([0.100, 0.200], x_data) + 0.300
+
 
 # 构造一个线性模型
-#
-b = tf.Variable(tf.zeros([1]))
-W = tf.Variable(tf.random_uniform([1, 2], -1.0, 1.0))
-y = tf.matmul(W, x_data) + b
+with tf.name_scope('BBBBBB'):
+    b = tf.Variable(tf.zeros([1]))
+    W = tf.Variable(tf.random_uniform([1, 2], -1.0, 1.0))
+    y = tf.matmul(W, x_data) + b
 
+
+# # 使用matplotlib 画图
+# fig = plt.figure()  # 先生成一个图片框
+# ax = fig.add_subplot(1, 1, 1)
+# ax.scatter(x_data, y_data)
+# plt.show()
 # 最小化方差
-loss = tf.reduce_mean(tf.square(y - y_data))
-optimizer = tf.train.GradientDescentOptimizer(0.5)
+with tf.name_scope('loss-model'):
+    loss = tf.reduce_mean(tf.square(y - y_data))
+    tf.summary.scalar('loss', loss)
+optimizer = tf.train.GradientDescentOptimizer(0.6)
 train = optimizer.minimize(loss)
 
 # 初始化变量
-init = tf.initialize_all_variables()
+# init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 
 # 启动图 (graph)
 sess = tf.Session()
 sess.run(init)
 
+# 收集操作数据
+merged = tf.summary.merge_all()
+# 写入文件
+writer = tf.summary.FileWriter('logs/', sess.graph)
+
+
 # 拟合平面
 for step in range(0, 201):
-    sess.run(train)
+    summary, _ = sess.run([merged, train])
+    writer.add_summary(summary, step)
     if step % 20 == 0:
         print(step, sess.run(W), sess.run(b))
+
+
+# # 高级模型
+# # 建立特征向量
+# feature_columns = [tf.feature_column.numeric_column('x', [1])]
+
+# # 创建训练器
+# estimator = tf.estimator.LinearRegressor(feature_columns=feature_columns)
