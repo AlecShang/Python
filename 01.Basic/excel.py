@@ -11,13 +11,13 @@
 '''
 #######################
 
-### 读取excel的内容,并写入到新的excel中去
+# 读取excel的内容,并写入到新的excel中去
 
 from openpyxl import Workbook, load_workbook
 from openpyxl.utils import get_column_letter
 
 # 读取xlsx文件,即工作簿
-wb = load_workbook(filename = r'312.xlsx')
+wb = load_workbook(filename=r'312.xlsx')
 # 获取sheet表
 table_name = wb['Sheet1']
 # l = []
@@ -39,31 +39,28 @@ for cell in table_name["A7":"T16"]:
     for cells in cell:
         # print(cells.value)
         l.append(cells.value)
-#print(l)
+print(l)
 
-# 实例化workbook,即激活工作簿
-wb1 = Workbook()
-# 定义一个xlsx文件
-excel_name_new = 'total.xlsx'
-# 激活workbook某个工作表
-wb1_active = wb1.active
-# 定义激活工作表的名称title
-wb1_active.title = 'shangjingwei'
-# 写入数据
-for i in range(10):
-    #0-19  20-39 40-59
-    wb1_active.append(l[i*20:(1+i)*20])
-# 最后保存工作簿
-wb1.save(filename = excel_name_new)
-
-
+# # 实例化workbook,即激活工作簿
+# wb1 = Workbook()
+# # 定义一个xlsx文件
+# excel_name_new = 'total.xlsx'
+# # 激活workbook某个工作表
+# wb1_active = wb1.active
+# # 定义激活工作表的名称title
+# wb1_active.title = 'shangjingwei'
+# # 写入数据
+# for i in range(10):
+#     #0-19  20-39 40-59
+#     wb1_active.append(l[i*20:(1+i)*20])
+# # 最后保存工作簿
+# wb1.save(filename = excel_name_new)
 
 
+# print(table_list)
+# print(table_name['D7'].value)
 
-#print(table_list)
-#print(table_name['D7'].value)
-
-### 将读取到的内容写入到新的excel当中
+# 将读取到的内容写入到新的excel当中
 # from openpyxl import Workbook
 # from openpyxl.utils import get_column_letter
 

@@ -9,7 +9,8 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "cwd": "${workspaceFolder}/.",
+            // "command": "${workspaceRoot}/env/bin/python3.7",
+            "cwd": "${workspaceFolder}",
             "env": {},
             "envFile": "${workspaceFolder}/.env",
             "pythonPath": "${config:python.pythonPath}",
@@ -21,12 +22,25 @@
             "request": "launch",
             "program": "${file}",
             // "program": "${workspaceRoot}/.",
-            "cwd": "${workspaceFolder}/.",
+            "cwd": "",
             "env": {},
             "envFile": "${workspaceFolder}/.env",
+            // "pythonPath": "${config:python.pythonPath}",
             // "pythonPath": "/usr/local/bin/python",
             //"console": "integratedTerminal"
             "console": "none"
+        },
+        {
+            "name": "Terminal",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            // "command": "${workspaceRoot}/env/bin/python3.7",
+            "cwd": "",
+            "env": {},
+            "envFile": "${workspaceFolder}/.env",
+            "pythonPath": "${config:python.pythonPath}",
+            "console": "integratedTerminal"
         },
         {
             "name": "Python: Remote Attach",

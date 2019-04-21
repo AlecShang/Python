@@ -54,7 +54,7 @@
 # 官方的新手入门
 import tensorflow as tf
 import numpy as np
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 
 # 使用 NumPy 生成假数据(phony data), 总共 100 个点.
 with tf.name_scope('input'):

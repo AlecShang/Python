@@ -13,10 +13,10 @@ import sys
 #         print(i)
 
 # 普通的读取文件方式
-# f = open(r'../shang.txt','r')
-# for i in f:
-#     print(i)
-# f.close()
+f = open(r'../shang.txt', 'r')
+for i in f:
+    print(i)
+f.close()
 
 # 将文本当中的内容以字符方式读取
 # with open(r'../shang.txt', 'r') as f:
