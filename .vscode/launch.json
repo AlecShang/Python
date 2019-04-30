@@ -28,7 +28,7 @@
             // "pythonPath": "${config:python.pythonPath}",
             // "pythonPath": "/usr/local/bin/python",
             //"console": "integratedTerminal"
-            "console": "none"
+            "console": "internalConsole"
         },
         {
             "name": "Terminal",

@@ -52,4 +52,4 @@ t = tf.constant([[True, False], [False, True]])
 # print(tf.concat([x, z], 0).eval())
 # print(tf.stack([[1, 2], [3, 4]]).eval())  # 将两个input组合,确保维度相同
 # print(tf.unstack([[1, 2], [3, 4]]))  # 讲一个高维Tensor分解成低维Tensor
-# print(tf.reverse(y, [0]).eval())  # 0代表根据横轴交换位置,1代表根据纵轴交换,也可以[0,1]
+print(tf.reverse(y, [0]).eval())  # 0代表根据横轴交换位置,1代表根据纵轴交换,也可以[0,1]

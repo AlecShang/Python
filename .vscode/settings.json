@@ -1,14 +1,10 @@
 {
-    "python.pythonPath": "/anaconda3/envs/Python371/bin/python",
+    "python.pythonPath": "/anaconda3/envs/python3/bin/python",
     // "python.pythonPath": "E:\\Anaconda3\\envs\\python37\\python.exe",
-    // "python.linting.flake8Enabled": true,
-    // "python.formatting.provider": "yapf",
-    // "python.linting.enabled": false,
-    "python.formatting.provider": "autopep8",
-    // "python.linting.pylintEnabled": true,
     // "python.linting.enabled": true,
-    "python.linting.pep8Enabled": false,
-    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "autopep8",
+    "python.linting.flake8Enabled": true,
+    // "python.linting.pylintEnabled": true,
     // "terminal.integrated.shellArgs.windows": [
     //     "-NoExit",
     //     "/c",
@@ -17,4 +13,8 @@
     // "terminal.integrated.shellArgs.windows": [
     //     "/K chcp 65001 >nul"
     // ]
+    "python.formatting.autopep8Args": [
+        "--ignore",
+        "E402"
+    ]
 }
