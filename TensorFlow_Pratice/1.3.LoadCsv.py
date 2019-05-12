@@ -4,6 +4,7 @@
 # 在数据读取方面,倾向于tf.data库
 import tensorflow as tf
 import numpy as np
+import pandas as pd
 #---------train.string_input_producer读取方式begin----------#
 # # https://zhuanlan.zhihu.com/p/27238630 创建文件名队列
 # filename_queue = tf.train.string_input_producer(
@@ -13,25 +14,25 @@ import numpy as np
 #---------train.string_input_producer读取方式end----------#
 
 #---------tf.data读取方式begin----------#
-# filenames = ["iris.csv"]
-dataset = tf.data.Dataset.from_tensor_slices(
-    # {
-    #     "a": np.array([1.0, 2.0, 3.0, 4.0, 5.0]),
-    #     "b": np.random.uniform(size=(5, 2))
-    # }
-    np.array([1, 2, 3, 4, 5])
-)
-# dataset = tf.data.TextLineDataset(filenames)  # 读取数据txt,csv
-dataset = dataset.map(lambda x: x+1)
-iterator = dataset.make_one_shot_iterator()  # 实例化一个iterator,数据从头到尾读取一次
-# 从iterator当中取出一个元素,类型是Tensor,需要sess.run()读取
-one_element = iterator.get_next()
-with tf.Session() as sess:
-    try:
-        for i in range(150):
-            print(sess.run(one_element))
-    except tf.errors.OutOfRangeError:
-        print("end!")
+# # filenames = ["iris.csv"]
+# dataset = tf.data.Dataset.from_tensor_slices(
+#     # {
+#     #     "a": np.array([1.0, 2.0, 3.0, 4.0, 5.0]),
+#     #     "b": np.random.uniform(size=(5, 2))
+#     # }
+#     np.array([1, 2, 3, 4, 5])
+# )
+# # dataset = tf.data.TextLineDataset(filenames)  # 读取数据txt,csv
+# dataset = dataset.map(lambda x: x + 1)
+# iterator = dataset.make_one_shot_iterator()  # 实例化一个iterator,数据从头到尾读取一次
+# # 从iterator当中取出一个元素,类型是Tensor,需要sess.run()读取
+# one_element = iterator.get_next()
+# with tf.Session() as sess:
+#     try:
+#         for i in range(150):
+#             print(sess.run(one_element))
+#     except tf.errors.OutOfRangeError:
+#         print("end!")
 #---------tf.data读取方式end----------#
 
 # record_defaults = [[1.0], [1.0], [1.0], [1.0], [""]]
@@ -53,3 +54,12 @@ with tf.Session() as sess:
 
 #     coord.request_stop()
 #     coord.join(threads)
+
+# 利用Series给frame添加新的一列
+
+new_frame = {'name': pd.Series(['wang', 'zhang', 'zhao'], [0, 1, 2]),
+             'age': pd.Series(['18', '19', '20'], [0, 1, 2]),
+             'sex': pd.Series(['female', 'male', 'male'], [0, 1, 2])}
+new_frame['score'] = pd.Series(['70', '80', '90'], [0, 1, 2])
+new_frame = pd.DataFrame(new_frame)
+print(new_frame)
