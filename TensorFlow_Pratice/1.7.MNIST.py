@@ -28,7 +28,9 @@ W = tf.Variable(tf.random_normal([300, 10], stddev=0.03))
 b = tf.Variable(tf.random_normal([10]))
 y_hidden1 = tf.nn.relu(tf.add(tf.matmul(x_raw, W_hidden1), b_hidden1))
 y_output = tf.nn.softmax(tf.add(tf.matmul(y_hidden1, W), b))
-# 可以用很多种不同的计算损失的公式,例如交叉熵
+
+# 一般遇到多层时,隐藏层用nn.relu,输出层使用nn.softmax
+# 在计算普通损失时使用mean(square()),在计算分类损失时使用交叉熵.
 loss = tf.reduce_mean(tf.square(y_output - y_raw))
 train = tf.train.GradientDescentOptimizer(0.1).minimize(loss)
 init = tf.global_variables_initializer()
