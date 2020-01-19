@@ -63,3 +63,12 @@
 # 99. 有两个磁盘文件A和B,各存放一行字母,
 # 要求把这两个文件中的信息合并(按字母顺序排列),
 #  输出到一个新文件C中。
+
+
+
+A ='abcde'
+B ='cdeab'
+for i in range(len(A)):
+    A = str(A[1:]+A[0])
+    if A == B:
+        return 'true'
