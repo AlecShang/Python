@@ -3,7 +3,7 @@
     // "python.pythonPath": "E:\\Anaconda3\\envs\\python37\\python.exe",
     // "python.linting.enabled": true,
     "python.formatting.provider": "autopep8",
-    // "python.linting.flake8Enabled": true,
+    "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": true,
     // "terminal.integrated.shellArgs.windows": [
     //     "-NoExit",
@@ -17,5 +17,4 @@
         "--ignore",
         "E402"
     ],
-    "python.linting.enabled": true
 }

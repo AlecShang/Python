@@ -1,4 +1,4 @@
-import igraph
+import jgraph
 import matplotlib.pyplot as plt
 import networkx as nx
 
@@ -48,7 +48,7 @@ def getCommunities_fastgreedy(G):
 
     # Plotting Dendograms
     print(str(communities.summary()))
-    igraph.plot(communities, 'dendogram.pdf', orientation='bt')
+    jgraph.plot(communities, 'dendogram.pdf', orientation='bt')
 
     # Return the communities object.
     return communities.as_clustering()
@@ -67,7 +67,7 @@ def visualizeGraphCommunities(g, communities, algorithm):
     print("Communities Detected by " + algorithm + ": ", max(member) + 1)
 
     # Mapping Colors to communities.
-    color_map = igraph.drawing.colors.ClusterColoringPalette(len(communities))
+    color_map = jgraph.drawing.colors.ClusterColoringPalette(len(communities))
 
     # Make edge weight N*3 if the pair of nodes/vertex belongs to same community else make weight equal to 1
     eweights = {e.index: (N * 3)
@@ -96,7 +96,7 @@ def visualizeGraphCommunities(g, communities, algorithm):
                                       repulserad=N ** 3)
 
     # Plot the graph highlighting the detected communties.
-    igraph.plot(communities,
+    jgraph.plot(communities,
                 'Result_FBData_' + algorithm + '.pdf',
                 layout=l,
                 vertex_size=2,
@@ -122,7 +122,7 @@ nx.draw(g, pos=nx.spring_layout(g, k=1),
 plt.show()
 
 # Read the Graph for community detection.
-G = igraph.Graph.Read_Edgelist(
+G = jgraph.Graph.Read_Edgelist(
     '/Users/shangjingwei/Documents/GitHub/python_lesson/pro/email.txt', directed=False)
 
 print('Ground truth number of communities: 13477')

@@ -177,19 +177,19 @@
 
 
 # 此处M代表行,N代表列.
-def minSum(M, N):
-    sum = 0
-    # 按列走加在一起,从0索引开始,即1到N
-    for i in range(1, N):
-        N[i] += N[i - 1]
-    # 按行走加在一起,求总和
-    for j in range(1, M):
-        M[j] += M[j - 1]
-    # 求最小和
-    for i in range(1, M):
-        for j in range(1, N):
-            sum = min(M[i - 1], N[j - 1])
-    return sum
+# def minSum(M, N):
+#     sum = 0
+#     # 按列走加在一起,从0索引开始,即1到N
+#     for i in range(1, N):
+#         N[i] += N[i - 1]
+#     # 按行走加在一起,求总和
+#     for j in range(1, M):
+#         M[j] += M[j - 1]
+#     # 求最小和
+#     for i in range(1, M):
+#         for j in range(1, N):
+#             sum = min(M[i - 1], N[j - 1])
+#     return sum
 
 
 # 近期某商场由于周年庆，开启了“0元购”活动。活动中，消费者可以通过组合手中的代金券，实现0元购买指定商品。
@@ -199,3 +199,20 @@ def minSum(M, N):
 #
 # 而如果现有65元的商品，则最佳优惠是两张30元代金券以及一张5元代金券。
 # 请你帮助小团使用一段代码来实现代金券计算。
+
+
+
+
+#coding=utf-8
+    # 1.如果发现左括号，则等待匹配右括号，左括号依然可以进入匹配，每匹配到一组括号则输出一组括号。
+    # 2.如果先发现右括号，则输出落单右括号+1
+    # 3.遍历完整个数组后，输出落单的左右括号，
+
+arr=input([[]])
+# site=0
+# for i in range(arr[0].length):
+#     if arr[0][i]='.':
+#         arr[0][i+2]='*'
+#         arr[1][i]='*'
+
+print(arr[0][1])
